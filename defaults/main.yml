@@ -1,0 +1,14 @@
+---
+
+win_temp_dir: 'c:\Program Files\ansible'
+win_log_dir: 'c:\ProgramData\ansible\log'
+
+win_powershellmodules:
+## for 7z uncompress
+  - Pscx
+
+## if empty, will go in User documents
+## Note: env variable are not resolved
+#win_powershell_transcription_dir: ''
+#win_powershell_transcription_dir: "%USERPROFILE%\\AppData\\Roaming\\PowershellTranscripts"
+win_powershell_transcription_dir: "c:\\Windows\\Logs\\PowershellTranscripts"
