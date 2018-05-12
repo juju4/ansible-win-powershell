@@ -28,3 +28,4 @@
     dest: "{{ win_temp_dir }}\\PSWindowsUpdate.zip"
 
 - include: windows-psmodules.yml
+  when: win_powershellmodules != []
