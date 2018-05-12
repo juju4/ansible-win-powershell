@@ -55,6 +55,8 @@ $ ansible -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory -
 
 ## FAQ
 
+* Pay attention to [Powershell v6 Core](http://www.labofapenetrationtester.com/2018/01/powershell6.html)! Not covered currently.
+
 ## License
 
 BSD 2-clause
