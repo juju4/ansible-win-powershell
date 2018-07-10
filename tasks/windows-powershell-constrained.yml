@@ -1,0 +1,16 @@
+---
+# https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/
+# https://blogs.technet.microsoft.com/kfalde/2017/01/20/pslockdownpolicy-and-powershell-constrained-language-mode/
+# https://adsecurity.org/?p=2921
+# Enable Constrained Language Mode:
+# [Environment]::SetEnvironmentVariable(‘__PSLockdownPolicy‘, ‘4’, ‘Machine‘)
+# Enable via Group Policy:
+# Computer Configuration\Preferences\Windows Settings\Environment
+
+- name: Set environment variable to set Powershell in constrained language mode
+  win_environment:
+    state: present
+    name: __PSLockdownPolicy
+    value: 4
+    level: machine
+
