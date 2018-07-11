@@ -97,6 +97,9 @@ test_script:
 after_test:
 - cmd: |
     %CYG_BASH% -lc 'ansible-playbook -i /cygdrive/c/projects/ansible-win-powershell/test/appveyor/inventory /cygdrive/c/projects/ansible-win-powershell/test/integration/%SUITE%/default.yml $ANSIBLE_EXTRA_VARS'
+
+on_finish:
+- cmd: env
 - ps: Get-Acl -Path "c:\Windows\Logs\PowershellTranscripts"
 - ps: Get-ChildItem -Path "HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell"
 - ps: Get-ChildItem -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-PowerShell/Operational"
