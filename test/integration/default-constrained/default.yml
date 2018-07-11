@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  become_method: runas
+  vars:
+    - win_powershell_constrained: true
+  roles:
+    - juju4.win-powershell
