@@ -1,0 +1,6 @@
+---
+
+# https://github.com/dantraMSFT/PowerShell-Docs/blob/staging/reference/6/Microsoft.PowerShell.Core/About/about_Logging.md
+# https://github.com/PowerShell/PowerShell/issues/5858
+- name: Enable Event Tracing for Powershell v6
+  win_shell: "\"C:\\Program Files\\PowerShell\\6.0.0\\RegisterManifest.ps1\" $PSHOME -Verbose"

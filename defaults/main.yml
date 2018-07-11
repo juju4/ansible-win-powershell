@@ -4,6 +4,7 @@ win_temp_dir: 'c:\Program Files\ansible'
 win_log_dir: 'c:\ProgramData\ansible\log'
 
 win_powershell_constrained: false
+win_powershell_v6: false
 
 win_powershellmodules:
 ## for 7z uncompress

@@ -107,3 +107,6 @@
 
 - include: windows-powershell-constrained.yml
   when: win_powershell_constrained
+
+- include: windows-powershell-v6.yml
+  when: win_powershell_v6
