@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: win_powershell
   author: juju4
   description: setup Powershell security on Windows system
   license: BSD
