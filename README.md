@@ -57,6 +57,19 @@ $ ansible -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory -
 
 * Pay attention to [Powershell v6 Core](http://www.labofapenetrationtester.com/2018/01/powershell6.html)! Not covered currently.
 
+* Reference links
+  * PowerShell5, WMF5. regedit or GPO. https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html
+  * https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/
+  * https://www.blackhat.com/docs/us-14/materials/us-14-Kazanciyan-Investigating-Powershell-Attacks-WP.pdf
+  * http://fr.slideshare.net/Hackerhurricane/ask-aalware-archaeologist/25
+  * http://www.asd.gov.au/publications/protect/securing-powershell.htm
+  * https://www.leeholmes.com/blog/2017/03/17/detecting-and-preventing-powershell-downgrade-attacks/
+  * https://blogs.msdn.microsoft.com/daviddasneves/2017/05/25/powershell-security-at-enterprise-customers/
+  * https://www.trendmicro.com/vinfo/us/security/news/security-technology/security-101-the-rise-of-fileless-threats-that-abuse-powershell
+  * Forward EID 4104 to SIEM at least. https://msdn.microsoft.com/en-us/library/cc748890.aspx
+  * https://media.defcon.org/DEF%20CON%2025/DEF%20CON%2025%20presentations/DEFCON-25-Daniel-Bohannon-and-Lee-Holmes-Revoke-Obfuscation.pdf
+  * https://dfir.it/blog/2018/05/08/down-the-rabbit-hole-with-packaged-powershell-scripts/
+
 ## License
 
 BSD 2-clause
