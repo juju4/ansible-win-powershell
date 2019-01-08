@@ -57,6 +57,8 @@ $ ansible -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory -
 
 * Pay attention to [Powershell v6 Core](http://www.labofapenetrationtester.com/2018/01/powershell6.html)! Not covered currently.
 
+* Don't use constrained mode or test appropriately as it will likely break ansible and most powershell dependencies.
+
 * Reference links
   * PowerShell5, WMF5. regedit or GPO. https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html
   * https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/
