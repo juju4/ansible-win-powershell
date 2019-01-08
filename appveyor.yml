@@ -16,38 +16,38 @@ environment:
   CYGWIN: winsymlinks:nativestrict
 
   matrix:
-  - TARGET: cygwin64
-    CYG_ROOT: C:\cygwin64
-    CYG_SETUP: C:\cygwin64\setup-x86_64.exe
-    CYG_CACHE: C:\cygwin64\var\cache\setup
-    CYG_BASH: C:\cygwin64\bin\sh
+  - SUITE: default
     ANSIBLE_VERSION: 2.6.1
     ANSIBLE_EXTRA_VARS:
-    SUITE: default
-  - TARGET: cygwin64
+    TARGET: cygwin64
     CYG_ROOT: C:\cygwin64
     CYG_SETUP: C:\cygwin64\setup-x86_64.exe
     CYG_CACHE: C:\cygwin64\var\cache\setup
     CYG_BASH: C:\cygwin64\bin\sh
+  - SUITE: default
     ANSIBLE_VERSION: 2.5.6
     ANSIBLE_EXTRA_VARS:
-    SUITE: default
-  - TARGET: cygwin64
+    TARGET: cygwin64
     CYG_ROOT: C:\cygwin64
     CYG_SETUP: C:\cygwin64\setup-x86_64.exe
     CYG_CACHE: C:\cygwin64\var\cache\setup
     CYG_BASH: C:\cygwin64\bin\sh
+  - SUITE: default
     ANSIBLE_VERSION: 2.4.6.0
     ANSIBLE_EXTRA_VARS:
-    SUITE: default
-  - TARGET: cygwin64
+    TARGET: cygwin64
     CYG_ROOT: C:\cygwin64
     CYG_SETUP: C:\cygwin64\setup-x86_64.exe
     CYG_CACHE: C:\cygwin64\var\cache\setup
     CYG_BASH: C:\cygwin64\bin\sh
+  - SUITE: default-constrained
     ANSIBLE_VERSION: 2.6.1
     ANSIBLE_EXTRA_VARS:
-    SUITE: default-constrained
+    TARGET: cygwin64
+    CYG_ROOT: C:\cygwin64
+    CYG_SETUP: C:\cygwin64\setup-x86_64.exe
+    CYG_CACHE: C:\cygwin64\var\cache\setup
+    CYG_BASH: C:\cygwin64\bin\sh
 matrix:
   fast_finish: true
 
