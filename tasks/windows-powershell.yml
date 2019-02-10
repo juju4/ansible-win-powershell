@@ -76,6 +76,7 @@
     - "HKLM:\\SOFTWARE"
 
 # https://blogs.technet.microsoft.com/kfalde/2017/05/13/securing-your-powershell-operational-logs/
+# http://community.idera.com/powershell/powertips/b/tips/posts/hardening-powershell-script-block-logging-log
 # FIXME!
 - name: Remove powershell logs access for BUILTIN Users
   win_acl:

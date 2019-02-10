@@ -13,6 +13,7 @@ Ansible role to setup powershell security on Windows system (logging, profile...
 ### Ansible
 It was tested on the following versions:
  * 2.4 (required since s/include:/include_tasks:/)
+ * up to 2.7
 
 ### Operating systems
 
@@ -26,7 +27,7 @@ For example
 ```
 - host: all
   roles:
-    - juju4.win-powershell
+    - juju4.win_powershell
 ```
 
 Run
@@ -71,6 +72,10 @@ $ ansible -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory -
   * Forward EID 4104 to SIEM at least. https://msdn.microsoft.com/en-us/library/cc748890.aspx
   * https://media.defcon.org/DEF%20CON%2025/DEF%20CON%2025%20presentations/DEFCON-25-Daniel-Bohannon-and-Lee-Holmes-Revoke-Obfuscation.pdf
   * https://dfir.it/blog/2018/05/08/down-the-rabbit-hole-with-packaged-powershell-scripts/
+
+* Signing powershell scripts
+  * https://blogs.technet.microsoft.com/heyscriptingguy/2010/06/17/hey-scripting-guy-how-can-i-sign-windows-powershell-scripts-with-an-enterprise-windows-pki-part-2-of-2/
+  * https://redmad.com/pki/sign-powershell-scripts-enterprise-pki/
 
 ## License
 

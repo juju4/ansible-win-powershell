@@ -6,6 +6,7 @@
 # [Environment]::SetEnvironmentVariable(‘__PSLockdownPolicy‘, ‘4’, ‘Machine‘)
 # Enable via Group Policy:
 # Computer Configuration\Preferences\Windows Settings\Environment
+# Revert: set to 0 or to deleted state
 
 - name: Set environment variable to set Powershell in constrained language mode
   win_environment:
