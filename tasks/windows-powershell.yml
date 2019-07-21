@@ -95,7 +95,7 @@
   ignore_errors: true
 
 - include: windows-powershell-constrained.yml
-  when: win_powershell_constrained
+  when: win_powershell_constrained|bool
 
 - include: windows-powershell-v6.yml
-  when: win_powershell_v6
+  when: win_powershell_v6|bool
