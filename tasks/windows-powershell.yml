@@ -10,7 +10,6 @@
 ### FIXME! why need to ignore errors???
 - name: enable module logging - PowerShell5 (2)
   win_regedit:
-#    key: 'HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ModuleLogging \ModuleNames'
     key: 'HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ModuleLogging\ModuleNames'
     value: "*"
     data: "*"
@@ -64,13 +63,13 @@
   win_regedit:
     key: "{{ item }}\\Policies\\Microsoft\\Windows\\PowerShell\\Transcription"
     value: OutputDirectory
-## default is %USERPROFILE%\Documents, can be UNC path
-## Dont forget to set appropriate permission, script attached
-#    data: ""
+    ## default is %USERPROFILE%\Documents, can be UNC path
+    ## Dont forget to set appropriate permission, script attached
+    # data: ""
     data: "{{ win_powershell_transcription_dir }}"
-## FIXME! Not recorded
-#    data: "%USERPROFILE%\\AppData\\Roaming\\PowershellTranscripts"
-#    datatype: string
+    ## FIXME! Not recorded
+    # data: "%USERPROFILE%\\AppData\\Roaming\\PowershellTranscripts"
+    # datatype: string
   with_items:
     - "HKLM:\\SOFTWARE\\Wow6432Node"
     - "HKLM:\\SOFTWARE"
@@ -82,12 +81,12 @@
   win_acl:
     path: "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-PowerShell/Operational"
     user: "{{ item }}"
-#    rights: ChangePermissions,Delete,FullControl,ReadKey,SetValue,TakeOwnership,WriteKey
+    # rights: ChangePermissions,Delete,FullControl,ReadKey,SetValue,TakeOwnership,WriteKey
     rights: ReadKey
     type: allow
     state: absent
-#    type: deny
-#    state: present
+    # type: deny
+    # state: present
     inherit: 'None'
     propagation: 'None'
   with_items:
