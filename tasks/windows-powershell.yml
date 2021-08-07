@@ -13,7 +13,7 @@
     key: 'HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ModuleLogging\ModuleNames'
     value: "*"
     data: "*"
-  ignore_errors: true
+  failed_when: false
 
 ## Warning! those options are very verbose!
 - name: enable script block logging - PowerShell5
@@ -91,7 +91,7 @@
     propagation: 'None'
   with_items:
     - 'BUILTIN\Users'
-  ignore_errors: true
+  failed_when: false
 
 - include: windows-powershell-constrained.yml
   when: win_powershell_constrained|bool
