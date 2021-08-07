@@ -41,4 +41,3 @@ $acl | Set-Acl $TranscriptDir\
 if (Get-WmiObject Win32_OperatingSystem | select buildnumber > 9200) {
   New-SmbShare -Name Transcripts -Path $TranscriptDir -ChangeAccess Everyone
 }
-
