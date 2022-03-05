@@ -1,6 +1,3 @@
-[![Build Status - Master](https://travis-ci.org/juju4/ansible-win-powershell.svg?branch=master)](https://travis-ci.org/juju4/ansible-win-powershell)
-[![Build Status - Devel](https://travis-ci.org/juju4/ansible-win-powershell.svg?branch=devel)](https://travis-ci.org/juju4/ansible-win-powershell/branches)(Syntax Only)
-
 [![Appveyor - Master](https://ci.appveyor.com/api/projects/status/1033u05y7ymce0w5?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-powershell)
 ![Appveyor - Devel](https://ci.appveyor.com/api/projects/status/1033u05y7ymce0w5/branch/devel?svg=true)
 
