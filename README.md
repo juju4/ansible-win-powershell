@@ -1,7 +1,7 @@
-[![Appveyor - Master](https://ci.appveyor.com/api/projects/status/1033u05y7ymce0w5?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-powershell)
-![Appveyor - Devel](https://ci.appveyor.com/api/projects/status/1033u05y7ymce0w5/branch/devel?svg=true)
+[![Appveyor - Master](https://ci.appveyor.com/api/projects/status/1033u05y7ymce0w5/branch/master?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-powershell/branch/master)
+[![Appveyor - Devel](https://ci.appveyor.com/api/projects/status/1033u05y7ymce0w5/branch/devel?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-powershell/branch/devel)
 
-# Windows firewall ansible role
+# Windows powershell ansible role
 
 Ansible role to setup powershell security on Windows system (logging, profile...).
 
@@ -11,6 +11,8 @@ Ansible role to setup powershell security on Windows system (logging, profile...
 It was tested on the following versions:
  * 2.4 (required since s/include:/include_tasks:/)
  * up to 2.7
+ * 4.10.0
+ * 5.3.0
 
 ### Operating systems
 
@@ -42,7 +44,7 @@ See defaults/main.yml for full scope
 This role has a travis basic test (for github, syntax check only), Appveyor test and a Vagrantfile (test/vagrant).
 
 ```
-$ cd /path/to/roles/juju4.win-powershell/test/vagrant
+$ cd /path/to/roles/juju4.win_powershell/test/vagrant
 $ vagrant up
 $ vagrant provision
 $ vagrant destroy
