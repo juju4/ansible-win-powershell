@@ -1,23 +1,23 @@
 ---
 
-- name: enable module logging - PowerShell5
-  win_regedit:
+- name: Enable module logging - PowerShell5
+  ansible.windows.win_regedit:
     key: HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ModuleLogging
     value: EnableModuleLogging
     data: 1
     datatype: dword
 
 ### FIXME! why need to ignore errors???
-- name: enable module logging - PowerShell5 (2)
-  win_regedit:
+- name: Enable module logging - PowerShell5 (2)
+  ansible.windows.win_regedit:
     key: 'HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ModuleLogging\ModuleNames'
     value: "*"
     data: "*"
   failed_when: false
 
 ## Warning! those options are very verbose!
-- name: enable script block logging - PowerShell5
-  win_regedit:
+- name: Enable script block logging - PowerShell5
+  ansible.windows.win_regedit:
     key: "{{ item }}\\Policies\\Microsoft\\Windows\\PowerShell\\ScriptBlockLogging"
     value: EnableScriptBlockLogging
     data: 1
@@ -26,8 +26,8 @@
     - "HKLM:\\SOFTWARE\\Wow6432Node"
     - "HKLM:\\SOFTWARE"
 
-- name: enable transcription - PowerShell5
-  win_regedit:
+- name: Enable transcription - PowerShell5
+  ansible.windows.win_regedit:
     key: "{{ item }}\\Policies\\Microsoft\\Windows\\PowerShell\\Transcription"
     value: EnableTranscripting
     data: 1
@@ -36,8 +36,8 @@
     - "HKLM:\\SOFTWARE\\Wow6432Node"
     - "HKLM:\\SOFTWARE"
 
-- name: enable transcription - PowerShell5 (2)
-  win_regedit:
+- name: Enable transcription - PowerShell5 (2)
+  ansible.windows.win_regedit:
     key: "{{ item }}\\Policies\\Microsoft\\Windows\\PowerShell\\Transcription"
     value: EnableInvocationHeader
     data: 1
@@ -47,20 +47,20 @@
     - "HKLM:\\SOFTWARE"
 
 - name: Create directory structure
-  win_file:
+  ansible.windows.win_file:
     path: "{{ win_powershell_transcription_dir }}"
     state: directory
 
-- name: setup permissions script for Transcript directory
-  win_template:
+- name: Setup permissions script for Transcript directory
+  ansible.windows.win_template:
     src: PowershellTranscripts-dir.ps1.j2
     dest: "{{ win_temp_dir }}\\PowershellTranscripts-dir.ps1"
 
 - name: Validate permissions for Transcript directory
-  win_shell: "\"{{ win_temp_dir }}\\PowershellTranscripts-dir.ps1\""
+  ansible.windows.win_shell: "\"{{ win_temp_dir }}\\PowershellTranscripts-dir.ps1\""
 
-- name: enable transcription - PowerShell5 (3)
-  win_regedit:
+- name: Enable transcription - PowerShell5 (3)
+  ansible.windows.win_regedit:
     key: "{{ item }}\\Policies\\Microsoft\\Windows\\PowerShell\\Transcription"
     value: OutputDirectory
     ## default is %USERPROFILE%\Documents, can be UNC path
@@ -78,7 +78,7 @@
 # http://community.idera.com/powershell/powertips/b/tips/posts/hardening-powershell-script-block-logging-log
 # FIXME!
 - name: Remove powershell logs access for BUILTIN Users
-  win_acl:
+  ansible.windows.win_acl:
     path: "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-PowerShell/Operational"
     user: "{{ item }}"
     # rights: ChangePermissions,Delete,FullControl,ReadKey,SetValue,TakeOwnership,WriteKey
@@ -93,8 +93,10 @@
     - 'BUILTIN\Users'
   failed_when: false
 
-- include: windows-powershell-constrained.yml
+- name: Import windows-powershell-constrained
+  ansible.builtin.import_tasks: windows-powershell-constrained.yml
   when: win_powershell_constrained|bool
 
-- include: windows-powershell-v6.yml
+- name: Import windows-powershell-v6
+  ansible.builtin.import_tasks: windows-powershell-v6.yml
   when: win_powershell_v6|bool
