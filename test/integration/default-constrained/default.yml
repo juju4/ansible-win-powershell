@@ -1,8 +1,9 @@
 ---
 
-- hosts: all
+- name: Test play
+  hosts: all
   become_method: runas
   vars:
-    - win_powershell_constrained: true
+    win_powershell_constrained: true
   roles:
-    - juju4.win-powershell
+    - juju4.win_powershell
